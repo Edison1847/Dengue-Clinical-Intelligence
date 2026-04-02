@@ -1,13 +1,37 @@
-# Dengue: Clinical Intelligence Dashboard
+<div align="center">
 
-> A real-time clinical research dashboard for dengue surveillance. 
+# 🦟 Dengue: Clinical Intelligence Dashboard
+
+> A real-time clinical research dashboard for dengue surveillance at **Colombo South Teaching Hospital, Sri Lanka**
+
+<br/>
+
+![Google Apps Script](https://img.shields.io/badge/Google_Apps_Script-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+
+<br/>
+
+![Status](https://img.shields.io/badge/Status-Active_Enrolment-brightgreen?style=flat-square)
+![Study](https://img.shields.io/badge/Study-Single_Centre_Prospective-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables_Assessed-323-purple?style=flat-square)
+![Institution](https://img.shields.io/badge/Institution-CSTH_Sri_Lanka-red?style=flat-square)
+
+</div>
 
 ---
 
 ## Overview
 
-This dashboard provides clinicians and researchers a single interface to monitor patient enrolment, assess severity, track data quality, and explore clinical patterns — all updated in real time.
+This dashboard provides clinicians and researchers a single interface to monitor patient enrolment, assess severity, track data quality, and explore clinical patterns — all updated in real time from the hospital's Google Forms data collection system.
 
+| Question | Where to look |
+|---|---|
+| **What is happening?** | Dashboard → KPIs, enrollment trend, data completeness |
+| **Who is at risk?** | Severity × Risk Matrix → high-risk patient list |
+| **How is data quality?** | Collection Monitor → missing data, outlier flags |
 
 ---
 
@@ -29,6 +53,17 @@ Deployed via Google Apps Script Web App — access requires Google account autho
 - **Fix Today List** — patient IDs with incomplete data, updated on every load
 - **Adjusted Completeness Score** — excludes structurally absent fields (conditional sub-fields, missing by design)
 
+### Dashboard Tabs
+
+| Tab | Content |
+|---|---|
+| Dashboard | KPIs, severity × risk matrix, warning signs, data quality |
+| Demographics | Age groups, gender, geographic distribution |
+| Clinical | Symptom frequency, vital signs, warning signs |
+| WHO Classification | DF / DHF / DSS distribution |
+| Lifestyle | Comorbidities, risk factors, medications |
+| Outcomes & Labs | ICU/HDU, hospital stay, platelet nadir, serology, complications |
+| Collection Monitor | Enrolment trend, completeness, follow-up tracker, patient gap list |
 
 ---
 
@@ -52,8 +87,6 @@ dengue-dashboard/
 ├── Code.gs               # Backend — data fetch, column mapping, all calculations
 ├── Index.html            # Frontend — single-page dashboard (HTML + CSS + JS)
 ├── appsscript.json       # GAS project configuration
-├── data emelemnts.txt    # Column header reference for Google Forms (~300+ fields)
-├── Dengue_MVS_EDA_Report.html  # EDA report (source for Data Analysis tab)
 └── README.md
 ```
 
@@ -78,7 +111,7 @@ const SHEET_NAME     = 'Form Responses 1';
 ```
 
 The Spreadsheet ID is in the sheet URL:
-`docs.google.com/spreadsheets/d/**[ID_HERE]**/edit`
+`docs.google.com/spreadsheets/d/[ID_HERE]/edit`
 
 ### 3. Deploy as a Web App
 
@@ -99,16 +132,16 @@ The Spreadsheet ID is in the sheet URL:
 ```
 doGet()
  └── getDashboardData()
-      ├── getColumnIndices(headers)       — maps ~40+ form fields to column indices
-      ├── calculateLabValues(data, idx)   — platelet, WBC, ALT/AST, creatinine, albumin, INR
-      ├── calculateSerology(data, idx)    — NS1, IgG/IgM, primary vs secondary
-      ├── calculateOutcomes(data, idx)    — ICU/HDU, hospital days, diagnosis, complications
-      ├── calculateWarningSigns(data, idx)— 8 WHO warning sign criteria
-      ├── calculateRiskAssessment(data)   — cumulative risk score → Low/Moderate/High/Critical
-      └── calculateCollectionMonitor()   — completeness, follow-up phases, enrollment trend
+      ├── getColumnIndices(headers)        — maps ~40+ form fields to column indices
+      ├── calculateLabValues(data, idx)    — platelet, WBC, ALT/AST, creatinine, albumin, INR
+      ├── calculateSerology(data, idx)     — NS1, IgG/IgM, primary vs secondary
+      ├── calculateOutcomes(data, idx)     — ICU/HDU, hospital days, diagnosis, complications
+      ├── calculateWarningSigns(data, idx) — 8 WHO warning sign criteria
+      ├── calculateRiskAssessment(data)    — cumulative risk score → Low/Moderate/High/Critical
+      └── calculateCollectionMonitor()    — completeness, follow-up phases, enrollment trend
 ```
 
-
+---
 
 ## Security Notes
 
@@ -118,4 +151,10 @@ doGet()
 
 ---
 
+<div align="center">
+
 *Built for clinical research — not for diagnostic use.*
+
+**Colombo South Teaching Hospital · Dengue Multi-Variable Study**
+
+</div>
