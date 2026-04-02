@@ -23,7 +23,7 @@
 
 ---
 
-## Overview
+## 🔍 Overview
 
 This dashboard provides clinicians and researchers a single interface to monitor patient enrolment, assess severity, track data quality, and explore clinical patterns — all updated in real time from the hospital's Google Forms data collection system.
 
@@ -35,39 +35,39 @@ This dashboard provides clinicians and researchers a single interface to monitor
 
 ---
 
-## Live Dashboard
+## 🌐 Live Dashboard
 
 Deployed via Google Apps Script Web App — access requires Google account authorization.
 
 ---
 
-## Features
+## ⚡ Features
 
-### Clinical Intelligence
+### 🧠 Clinical Intelligence
 - **Severity × Risk Cross-Analysis** — binary WHO severity staging cross-tabulated with cumulative risk scores, surfacing "silent danger" patients with mild presentation but high/critical risk
 - **High-Risk Patient Table** — ranked list with individual risk factors (age, comorbidities, medications, bleeding)
 - **WHO Warning Signs Panel** — frequency analysis of all 8 warning sign criteria
 
-### Real-Time Monitoring
+### 📡 Real-Time Monitoring
 - **Collection Monitor Tab** — tracks enrolment progress, completeness over time, follow-up phase completion (5 phases), and days-to-completion distributions
 - **Fix Today List** — patient IDs with incomplete data, updated on every load
 - **Adjusted Completeness Score** — excludes structurally absent fields (conditional sub-fields, missing by design)
 
-### Dashboard Tabs
+### 🗂️ Dashboard Tabs
 
 | Tab | Content |
 |---|---|
-| Dashboard | KPIs, severity × risk matrix, warning signs, data quality |
-| Demographics | Age groups, gender, geographic distribution |
-| Clinical | Symptom frequency, vital signs, warning signs |
-| WHO Classification | DF / DHF / DSS distribution |
-| Lifestyle | Comorbidities, risk factors, medications |
-| Outcomes & Labs | ICU/HDU, hospital stay, platelet nadir, serology, complications |
-| Collection Monitor | Enrolment trend, completeness, follow-up tracker, patient gap list |
+| 📊 Dashboard | KPIs, severity × risk matrix, warning signs, data quality |
+| 👥 Demographics | Age groups, gender, geographic distribution |
+| 🩺 Clinical | Symptom frequency, vital signs, warning signs |
+| 🏷️ WHO Classification | DF / DHF / DSS distribution |
+| 🌿 Lifestyle | Comorbidities, risk factors, medications |
+| 🔬 Outcomes & Labs | ICU/HDU, hospital stay, platelet nadir, serology, complications |
+| 📋 Collection Monitor | Enrolment trend, completeness, follow-up tracker, patient gap list |
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -80,7 +80,7 @@ Deployed via Google Apps Script Web App — access requires Google account autho
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```
 dengue-dashboard/
@@ -92,7 +92,7 @@ dengue-dashboard/
 
 ---
 
-## Deployment
+## 🚀 Deployment
 
 ### 1. Create a Google Apps Script project
 
@@ -127,7 +127,7 @@ The Spreadsheet ID is in the sheet URL:
 
 ---
 
-## Backend Architecture
+## ⚙️ Backend Architecture
 
 ```
 doGet()
@@ -143,7 +143,7 @@ doGet()
 
 ---
 
-## Security Notes
+## 🔒 Security Notes
 
 - This dashboard is intended for authorized research personnel only
 - Restrict web app access appropriately before sharing externally
@@ -151,10 +151,22 @@ doGet()
 
 ---
 
+## 📄 License
+
+MIT License — free to use, fork, and modify for personal or commercial projects.
+
+---
+
 <div align="center">
 
 *Built for clinical research — not for diagnostic use.*
 
-**Colombo South Teaching Hospital · Dengue Multi-Variable Study**
+---
+
+**Built by Dilshan Ganepola** — Principal AI Specialist
+
+MRCGP &nbsp;|&nbsp; MSc in Health Informatics &nbsp;|&nbsp; US Patent in Medical AI
+
+*Strong interest in precision AI*
 
 </div>
