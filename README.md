@@ -15,9 +15,8 @@
 <br/>
 
 ![Status](https://img.shields.io/badge/Status-Active_Enrolment-brightgreen?style=flat-square)
-![Study](https://img.shields.io/badge/Study-Single_Centre_Prospective-blue?style=flat-square)
 ![Variables](https://img.shields.io/badge/Variables_Assessed-323-purple?style=flat-square)
-![Institution](https://img.shields.io/badge/Institution-CSTH_Sri_Lanka-red?style=flat-square)
+
 
 </div>
 
