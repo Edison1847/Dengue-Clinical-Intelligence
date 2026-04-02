@@ -153,7 +153,7 @@ doGet()
 
 ## 📄 License
 
-MIT License — free to use, fork, and modify for personal or commercial projects.
+MIT License — free to use, fork, and modify for personal or research projects.
 
 ---
 
