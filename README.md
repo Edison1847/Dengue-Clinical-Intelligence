@@ -1,20 +1,13 @@
 # Dengue: Clinical Intelligence Dashboard
 
-> A real-time clinical research dashboard for dengue multi-variable study at **Colombo South Teaching Hospital (CSTH)**, Sri Lanka — built on Google Apps Script and powered by live Google Sheets data.
+> A real-time clinical research dashboard for dengue surveillance. 
 
 ---
 
 ## Overview
 
-This dashboard provides clinicians and researchers a single interface to monitor patient enrolment, assess severity, track data quality, and explore clinical patterns — all updated in real time from the hospital's Google Forms data collection system.
+This dashboard provides clinicians and researchers a single interface to monitor patient enrolment, assess severity, track data quality, and explore clinical patterns — all updated in real time.
 
-The system answers three core clinical questions:
-
-| Question | Where to look |
-|---|---|
-| **What is happening?** | Dashboard → KPIs, enrollment trend, data completeness |
-| **Who is at risk?** | Severity × Risk Matrix → high-risk patient list |
-| **How is data quality?** | Collection Monitor → missing data, outliers, issues |
 
 ---
 
@@ -36,21 +29,6 @@ Deployed via Google Apps Script Web App — access requires Google account autho
 - **Fix Today List** — patient IDs with incomplete data, updated on every load
 - **Adjusted Completeness Score** — excludes structurally absent fields (conditional sub-fields, missing by design)
 
-### Clinical Tabs
-| Tab | Content |
-|---|---|
-| **Dashboard** | KPIs, severity×risk matrix, warning signs, data quality |
-| **Demographics** | Age groups, gender, geographic distribution |
-| **Clinical** | Symptom frequency, vital signs, warning signs |
-| **WHO Classification** | DF / DHF / DSS distribution |
-| **Lifestyle** | Comorbidities, risk factors, medications |
-| **Outcomes & Labs** | ICU/HDU, hospital stay, platelet nadir, serology, complications |
-| **Collection Monitor** | Enrolment trend, completeness, follow-up tracker, patient gap list |
-
-### Data Quality Analysis (EDA Integration — in progress)
-- Missing data by key variable (albumin, BMI, discharge platelet, liver enzymes)
-- IQR-based outlier detection with clinical threshold flags
-- Structured issue log (critical / moderate / minor / low severity)
 
 ---
 
@@ -130,54 +108,13 @@ doGet()
       └── calculateCollectionMonitor()   — completeness, follow-up phases, enrollment trend
 ```
 
----
 
-## Data Model
-
-The study collects **323 variables** per patient via Google Forms. Key domains:
-
-| Domain | Variables |
-|---|---|
-| Demographics | Age, gender, BMI, education |
-| Comorbidities | HT, DM, IHD, asthma/COPD, CKD, CLD |
-| Symptoms | Fever, headache, myalgia, vomiting, rash, bleeding (×8 types) |
-| WHO warning signs | Abdominal pain, persistent vomiting, fluid accumulation, mucosal bleeding, lethargy, liver enlargement, elevated HCT with low platelet, rapid clinical deterioration |
-| Lab values | Platelet (admission/nadir/discharge), WBC, ALT, AST, creatinine, albumin, HCT, INR |
-| Serology | NS1 Ag, IgM, IgG |
-| Outcomes | ICU/HDU, hospital stay days, discharge outcome, complications (ALF, AKI, encephalopathy) |
-
----
-
-## Known Data Quality Issues
-
-| Severity | Issue |
-|---|---|
-| Critical | 66% missing — Serum Albumin |
-| Moderate | 28% missing — BMI |
-| Moderate | Free-text fields not machine-readable (medication names, other symptoms) |
-| Moderate | 25 unnamed survey artefact columns (Unnamed: 298–322) |
-| Minor | Extreme outlier BMI=80 — likely data entry error |
-| Minor | Conditional sub-fields missing by design (pregnancy, bleeding sub-fields) |
-| Low | PII present — phone number column |
-
----
 
 ## Security Notes
 
 - This dashboard is intended for authorized research personnel only
 - Restrict web app access appropriately before sharing externally
-- Phone numbers are present in source data — do not expose in public deployments
 - Google Sheets permissions control who can modify the underlying data
-
----
-
-## Study Context
-
-**Institution:** Colombo South Teaching Hospital (CSTH), Sri Lanka  
-**Study:** Dengue Multi-Variable Study (MVS) — prospective, single-centre  
-**Design:** Ongoing enrolment; structured data collection via Google Forms  
-**Variables assessed:** 323 per patient  
-**Current cohort:** N = 50 (snapshot: Oct 15 – Nov 26, 2025)
 
 ---
 
