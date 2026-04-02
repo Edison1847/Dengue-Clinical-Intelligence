@@ -1,0 +1,18 @@
+# Sensitive data — never commit
+data emelemnts.txt
+
+# Local EDA report (large, not needed in repo)
+Dengue_MVS_EDA_Report.html
+
+# Preview/demo files
+preview.html
+demo.html
+QUICKSTART.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
