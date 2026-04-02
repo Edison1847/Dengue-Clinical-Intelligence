@@ -1,5 +1,5 @@
-const SPREADSHEET_ID = '1wC3o_yhzHg-xGmK-TLqm3grErQsQ0vOptjtl6pZj-sg';
-const SHEET_NAME = 'Form Responses 1';
+const SPREADSHEET_ID = '';
+const SHEET_NAME = '';
 let cache = CacheService.getScriptCache();
 const CACHE_DURATION = 300;
 

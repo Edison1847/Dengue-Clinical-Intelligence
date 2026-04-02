@@ -105,8 +105,8 @@ dengue-dashboard/
 In `Code.gs`, update:
 
 ```javascript
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE';
-const SHEET_NAME     = 'Form Responses 1';
+const SPREADSHEET_ID = '';
+const SHEET_NAME = '';
 ```
 
 The Spreadsheet ID is in the sheet URL:
