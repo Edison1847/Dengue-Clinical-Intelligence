@@ -49,7 +49,7 @@ Deployed via Google Apps Script Web App — access requires Google account autho
 
 ### 📡 Real-Time Monitoring
 - **Collection Monitor Tab** — tracks enrolment progress, completeness over time, follow-up phase completion (5 phases), and days-to-completion distributions
-- **Fix Today List** — patient IDs with incomplete data, updated on every load
+- **Fix Today List** — patient IDs with incomplete data, updated on every load.
 - **Adjusted Completeness Score** — excludes structurally absent fields (conditional sub-fields, missing by design)
 
 ### 🗂️ Dashboard Tabs
